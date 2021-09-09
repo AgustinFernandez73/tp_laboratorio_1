@@ -24,8 +24,8 @@ int MultiplicarNumeros (int unNumero, int otroNumero) {
 	return resultado;
 }
 
-int DividirNumeros (int unNumero, int otroNumero) {
-	int resultado;
+float DividirNumeros (float unNumero, float otroNumero) {
+	float resultado;
 
 	if (otroNumero != 0) {
 		resultado = unNumero / otroNumero;

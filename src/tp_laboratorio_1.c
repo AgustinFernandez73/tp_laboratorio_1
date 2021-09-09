@@ -13,7 +13,7 @@
 int main(void) {
 	setbuf(stdout, NULL);
 
-	int opcion;
+	char opcion;
 	float x;
 	float y;
 
@@ -49,33 +49,39 @@ int main(void) {
 		printf("5. Salir\n");
 		printf("---------------------------------\n");
 		printf("¿Que opción desea realizar?: ");
-		scanf("%d", &opcion);
+		fflush(stdin);
+		scanf("%c", &opcion);
 
-		while (opcion < 1 || opcion > 5) {
-			printf("Ingrese una opción valida: ");
-			scanf("%d", &opcion);
+		while (opcion < 49 || opcion > 53) {
+			printf("ERROR. Ingrese una opción valida: ");
+			fflush(stdin);
+			scanf("%c", &opcion);
 		}
 
 		switch (opcion) {
 
-		case 1:
+		case 49:
+			printf("---------------------------------\n");
 			printf("Ingrese el primer numero: ");
 			scanf("%f", &x);
 			printf("A = %.2f\n", x);
 			flagX = 0;
 			break;
 
-		case 2:
+		case 50:
+			printf("---------------------------------\n");
 			printf("Ingrese el segundo numero: ");
 			scanf("%f", &y);
 			printf("B = %.2f\n", y);
 			flagY = 0;
 			break;
 
-		case 3:
+		case 51:
 			if (flagX == 1 || flagY == 1) {
+				printf("---------------------------------\n");
 				printf("No se ingresaron los dos numeros\n");
 			} else {
+				printf("----------------------------------------\n");
 				printf("Calcular la suma           (%.2f + %.2f)\n", x, y);
 				resultadoSuma = SumarNumeros(x, y);
 				printf("Calcular la resta          (%.2f - %.2f)\n", x, y);
@@ -97,10 +103,12 @@ int main(void) {
 			}
 			break;
 
-		case 4:
+		case 52:
 			if (flagCalculos == 1) {
+				printf("---------------------------------\n");
 				printf("No se han realizado los calculos\n");
 			} else {
+				printf("------------------------------------\n");
 				printf("El resultado de %.2f + %.2f es: %.2f\n", x, y, resultadoSuma);
 				printf("El resultado de %.2f - %.2f es: %.2f\n", x, y, resultadoResta);
 				if (y != 0) {
@@ -122,14 +130,14 @@ int main(void) {
 			}
 			break;
 
-		case 5:
+		case 53:
 			printf("-------------------------------\n");
 			printf("Gracias por usar la calculadora\n");
 			printf("-------------------------------");
 			break;
 		}
 
-	} while (opcion != 5);
+	} while (opcion != 53);
 
 	return EXIT_SUCCESS;
 }

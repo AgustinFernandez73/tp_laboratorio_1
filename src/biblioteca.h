@@ -38,7 +38,7 @@ int MultiplicarNumeros (int, int);
 /// @param Primer numero ingresado que va a dividirse
 /// @param Segundo numero ingresado que va a dividirse (Mayor a 0)
 /// @return Retorno el resultado de la division
-int DividirNumeros (int, int);
+float DividirNumeros (float, float);
 
 
 
