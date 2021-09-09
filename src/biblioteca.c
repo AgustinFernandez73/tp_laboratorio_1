@@ -29,8 +29,6 @@ int DividirNumeros (int unNumero, int otroNumero) {
 
 	if (otroNumero != 0) {
 		resultado = unNumero / otroNumero;
-	} else {
-		printf("No se puede dividir por 0");
 	}
 
 	return resultado;
