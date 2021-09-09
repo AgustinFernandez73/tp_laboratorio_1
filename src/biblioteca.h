@@ -10,7 +10,7 @@
 ///
 /// @param Primer numero ingresado que va a sumarse
 /// @param Segundo numero ingresado que va a sumarse
-/// @return
+/// @return Retorno el resultado de la suma
 int SumarNumeros (int, int);
 
 
@@ -19,7 +19,7 @@ int SumarNumeros (int, int);
 ///
 /// @param Primer numero ingresado que va a restarse
 /// @param Segundo numero ingresado que va a restarse
-/// @return
+/// @return Retorno el resultado de la resta
 int RestarNumeros (int, int);
 
 
@@ -28,7 +28,7 @@ int RestarNumeros (int, int);
 ///
 /// @param Primer numero ingresado que va a multiplicarse
 /// @param Segundo numero ingresado que va a multiplicarse
-/// @return
+/// @return Retorno el resultado de la multiplicacion
 int MultiplicarNumeros (int, int);
 
 
@@ -37,7 +37,7 @@ int MultiplicarNumeros (int, int);
 ///
 /// @param Primer numero ingresado que va a dividirse
 /// @param Segundo numero ingresado que va a dividirse (Mayor a 0)
-/// @return
+/// @return Retorno el resultado de la division
 int DividirNumeros (int, int);
 
 
@@ -46,7 +46,7 @@ int DividirNumeros (int, int);
 /// @brief Recibe un numero y retorna el resultado de la factorizacion
 ///
 /// @param Numero ingresado que va a factorizarse
-/// @return
+/// @return Retorno el resultado de la factorizacion
 long int FactorizarNumero (int);
 
 #endif

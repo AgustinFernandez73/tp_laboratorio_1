@@ -35,7 +35,7 @@ int DividirNumeros (int unNumero, int otroNumero) {
 }
 
 long int FactorizarNumero (int unNumero) {
-	int resultado = 1;
+	long long resultado = 1;
 	int contador;
 
 	for (contador = unNumero; contador > 1; contador--) {
