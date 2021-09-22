@@ -1,22 +1,22 @@
 #include "biblioteca.h"
 
-int SumarNumeros(int unNumero, int otroNumero) {
-	int resultado;
+float SumarNumeros(float unNumero, float otroNumero) {
+	float resultado;
 
 	resultado = unNumero + otroNumero;
 
 	return resultado;
 }
 
-int RestarNumeros(int unNumero, int otroNumero) {
-	int resultado;
+float RestarNumeros(float unNumero, float otroNumero) {
+	float resultado;
 
 	resultado = unNumero - otroNumero;
 
 	return resultado;
 }
 
-int MultiplicarNumeros (int unNumero, int otroNumero) {
+float MultiplicarNumeros (float unNumero, float otroNumero) {
 	int resultado;
 
 	resultado = unNumero * otroNumero;
@@ -34,8 +34,8 @@ float DividirNumeros (float unNumero, float otroNumero) {
 	return resultado;
 }
 
-long int FactorizarNumero (int unNumero) {
-	long long resultado = 1;
+unsigned long long FactorizarNumero (int unNumero) {
+	unsigned long long resultado = 1;
 	int contador;
 
 	for (contador = unNumero; contador > 1; contador--) {

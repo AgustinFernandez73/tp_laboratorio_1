@@ -13,7 +13,7 @@
 int main(void) {
 	setbuf(stdout, NULL);
 
-	char opcion;
+	int opcion;
 	float x;
 	float y;
 
@@ -21,65 +21,76 @@ int main(void) {
 	float resultadoResta;
 	float resultadoDivision;
 	float resultadoMultiplicacion;
-	long int resultadoFactorizarA;
-	long int resultadoFactorizarB;
+	unsigned long long resultadoFactorizarA;
+	unsigned long long resultadoFactorizarB;
 
 	int flagX = 1;
 	int flagY = 1;
 	int flagCalculos = 1;
 
+	int validacionNum;
+
+
 	do {
 
-		printf("--------MENU DE OPCIONES---------\n");
+		printf("\n|════════ MENU DE OPCIONES ════════════|\n");
 
 		if (flagX) {
-			printf("1. Ingresar 1er operando (A = x)\n");
+			printf("| 1. Ingresar 1er operando (A = x)     |\n");
 		} else {
-			printf("1. Ingresar 1er operando (A = %.2f)\n", x);
+			printf("| 1. Ingresar 1er operando (A = %.2f) |\n", x);
 		}
 
 		if (flagY) {
-			printf("2. Ingresar 2do operando (B = y)\n");
+			printf("| 2. Ingresar 2do operando (B = y)     |\n");
 		} else {
-			printf("2. Ingresar 2do operando (B = %.2f)\n", y);
+			printf("| 2. Ingresar 2do operando (B = %.2f)  |\n", y);
 		}
 
-		printf("3. Calcular todas las operaciones\n");
-		printf("4. Informar resultados\n");
-		printf("5. Salir\n");
-		printf("---------------------------------\n");
-		printf("¿Que opción desea realizar?: ");
-		fflush(stdin);
-		scanf("%c", &opcion);
-
-		while (opcion < 49 || opcion > 53) {
-			printf("ERROR. Ingrese una opción valida: ");
+		printf("| 3. Calcular todas las operaciones    |\n"
+				"| 4. Informar resultados               |\n"
+				"| 5. Salir                             |\n"
+				"|______________________________________|\n"
+				"\n¿Que opción desea realizar?: ");
+		validacionNum = scanf("%d", &opcion);
+		while(!validacionNum || opcion < 1 || opcion > 5) {
+			printf("ERROR. Ingrese una opcion valida: ");
 			fflush(stdin);
-			scanf("%c", &opcion);
+			validacionNum = scanf("%d", &opcion);
 		}
 
 		switch (opcion) {
 
-		case 49:
-			printf("---------------------------------\n");
-			printf("Ingrese el primer numero: ");
-			scanf("%f", &x);
+		case 1:
+			printf("-------------------------------\n"
+					"Ingrese el primer numero: ");
+			validacionNum = scanf("%f", &x);
+			while(!validacionNum) {
+				printf("ERROR, Reingrese numero: ");
+				fflush(stdin);
+				validacionNum = scanf("%f", &x);
+			}
 			printf("A = %.2f\n", x);
 			flagX = 0;
 			break;
 
-		case 50:
-			printf("---------------------------------\n");
-			printf("Ingrese el segundo numero: ");
-			scanf("%f", &y);
+		case 2:
+			printf("---------------------------------\n"
+					"Ingrese el segundo numero: ");
+			validacionNum = scanf("%f", &y);
+			while(!validacionNum) {
+				printf("ERROR, Reingrese numero: ");
+				fflush(stdin);
+				validacionNum = scanf("%f", &y);
+			}
 			printf("B = %.2f\n", y);
 			flagY = 0;
 			break;
 
-		case 51:
+		case 3:
 			if (flagX == 1 || flagY == 1) {
-				printf("---------------------------------\n");
-				printf("No se ingresaron los dos numeros\n");
+				printf("---------------------------------\n"
+						"No se ingresaron los dos numeros\n");
 			} else {
 				printf("----------------------------------------\n");
 				printf("Calcular la suma           (%.2f + %.2f)\n", x, y);
@@ -103,10 +114,10 @@ int main(void) {
 			}
 			break;
 
-		case 52:
+		case 4:
 			if (flagCalculos == 1) {
-				printf("---------------------------------\n");
-				printf("No se han realizado los calculos\n");
+				printf("---------------------------------\n"
+						"No se han realizado los calculos\n");
 			} else {
 				printf("------------------------------------\n");
 				printf("El resultado de %.2f + %.2f es: %.2f\n", x, y, resultadoSuma);
@@ -119,25 +130,25 @@ int main(void) {
 				printf("El resultado de %.2f * %.2f es: %.2f\n", x, y, resultadoMultiplicacion);
 
 				if (x >= 0 && y >= 0) {
-					printf("El factorial de %.2f es %ld y el factorial de %.2f es %ld\n", x, resultadoFactorizarA, y, resultadoFactorizarB);
+					printf("El factorial de %.2f es %I64u y el factorial de %.2f es %I64u\n", x, resultadoFactorizarA, y, resultadoFactorizarB);
 				} else if (x >= 0) {
-					printf("El factorial de %.2f es %ld. No se puede calcular el factorial de %.2f\n", x, resultadoFactorizarA, y);
+					printf("El factorial de %.2f es %I64u. No se puede calcular el factorial de %.2f\n", x, resultadoFactorizarA, y);
 				} else if (y >= 0) {
-					printf("El factorial de %.2f es %ld. No se puede calcular el factorial de %.2f\n", y, resultadoFactorizarB, x);
+					printf("El factorial de %.2f es %I64u. No se puede calcular el factorial de %.2f\n", y, resultadoFactorizarB, x);
 				} else {
 					printf("No se puede calcular el factorial de %.2f y el factorial de %.2f\n", x, y);
 				}
 			}
 			break;
 
-		case 53:
-			printf("-------------------------------\n");
-			printf("Gracias por usar la calculadora\n");
-			printf("-------------------------------");
+		case 5:
+			printf("___________________________________\n"
+					"| Gracias por usar la calculadora |\n"
+					"|_________________________________|");
 			break;
 		}
 
-	} while (opcion != 53);
+	} while (opcion != 5);
 
 	return EXIT_SUCCESS;
 }
