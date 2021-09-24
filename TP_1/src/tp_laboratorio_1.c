@@ -33,25 +33,25 @@ int main(void) {
 
 	do {
 
-		printf("\n|════════ MENU DE OPCIONES ════════════|\n");
+		printf("\n|---------- MENU DE OPCIONES ------------|\n");
 
 		if (flagX) {
-			printf("| 1. Ingresar 1er operando (A = x)     |\n");
+			printf("| 1. Ingresar 1er operando (A = x)       |\n");
 		} else {
-			printf("| 1. Ingresar 1er operando (A = %.2f) |\n", x);
+			printf("| 1. Ingresar 1er operando (A = %.2f)   |\n", x);
 		}
 
 		if (flagY) {
-			printf("| 2. Ingresar 2do operando (B = y)     |\n");
+			printf("| 2. Ingresar 2do operando (B = y)       |\n");
 		} else {
-			printf("| 2. Ingresar 2do operando (B = %.2f)  |\n", y);
+			printf("| 2. Ingresar 2do operando (B = %.2f)    |\n", y);
 		}
 
-		printf("| 3. Calcular todas las operaciones    |\n"
-				"| 4. Informar resultados               |\n"
-				"| 5. Salir                             |\n"
-				"|______________________________________|\n"
-				"\n¿Que opción desea realizar?: ");
+		printf("| 3. Calcular todas las operaciones      |\n"
+				"| 4. Informar resultados                 |\n"
+				"| 5. Salir                               |\n"
+				"|________________________________________|\n"
+				"\nIngrese una opcion: ");
 		validacionNum = scanf("%d", &opcion);
 		while(!validacionNum || opcion < 1 || opcion > 5) {
 			printf("ERROR. Ingrese una opcion valida: ");
